@@ -1,3 +1,4 @@
+@Library('my_shared_library')_
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
