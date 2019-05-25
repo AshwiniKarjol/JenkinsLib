@@ -51,9 +51,11 @@ stage('Build'){
    {
        
       // sh "docker build -t seconddocker/image:${BUILD_NUMBER} ."
-      docker.withRegistry('https://registry.hub.docker.com', 'DockerAuth1') {
-       def customImage = docker.build("seconddocker/image:${BUILD_NUMBER}")
-       customImage.push()
+      
+      Dockerbuild "https://registry.hub.docker.com","DockerAuth1","seconddocker/image"
+     // docker.withRegistry('https://registry.hub.docker.com', 'DockerAuth1') {
+      // def customImage = docker.build("seconddocker/image:${BUILD_NUMBER}")
+      // customImage.push()
        }
        
        
