@@ -37,14 +37,16 @@ stage('Build'){
     )
    }
    stage('Sonar Quality gate')
-   {   withSonarQubeEnv('SonarQube1') { 
-      timeout(time: 1, unit: 'HOURS') { 
-           def qg = waitForQualityGate() 
-           if (qg.status != 'OK') {
-             error "Pipeline aborted due to quality gate failure: ${qg.status}"
-           }
-        }
-   }
+   {   //withSonarQubeEnv('SonarQube1') { 
+     // timeout(time: 1, unit: 'HOURS') { 
+        //   def qg = waitForQualityGate() 
+         //  if (qg.status != 'OK') {
+          //   error "Pipeline aborted due to quality gate failure: ${qg.status}"
+          // }
+       // }
+  // }
+  
+  sonarqube "SonarQube1"
    
    }
    stage('Docker image build')
