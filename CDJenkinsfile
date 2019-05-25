@@ -1,16 +1,18 @@
 node(label:'slave_jenkins') {
 stage('Download Artifacts') {
-rtDownload (
-    serverId: "Artifactory1",
-    spec:
-        """{
-          "files": [
-            {
-              "pattern": "libs-snapshot-repo/${env.BUILD_NUMBER}/",
-              "target": "/var/lib/jenkins/workspace/"
-            }
-         ]
-        }"""
-)
+
+cdartifactorylib "Artifactory1","libs-snapshot-repo","/var/lib/jenkins/workspace/"
+//rtDownload (
+  //  serverId: "Artifactory1",
+   // spec:
+     //   """{
+        //  "files": [
+          //  {
+            //  "pattern": "libs-snapshot-repo/${env.BUILD_NUMBER}/",
+             // "target": "/var/lib/jenkins/workspace/"
+            //}
+         //]
+        //}"""
+//)
 }
 }
