@@ -1,0 +1,15 @@
+stage('Download Artifacts') {
+rtDownload (
+    serverId: "Artifactory1",
+    spec:
+        """{
+          "files": [
+            {
+              "pattern": "libs-snapshot-repo/23/",
+              "target": "/var/lib/jenkins/workspace/,
+            }
+         ]
+        }"""
+)
+
+}
