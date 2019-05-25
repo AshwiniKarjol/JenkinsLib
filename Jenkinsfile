@@ -49,7 +49,7 @@ stage('Build'){
    }
    stage('Docker image build')
    {
-       sh "docker build -t ash/image:${BUILD_NUMBER} ."
+       sh "docker build -t seconddocker/image:${BUILD_NUMBER} ."
    }
    
    stage('Deploy artifacts')
