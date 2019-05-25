@@ -6,7 +6,7 @@ rtDownload (
         """{
           "files": [
             {
-              "pattern": "libs-snapshot-repo/23/",
+              "pattern": "libs-snapshot-repo/${env.BUILD_NUMBER}/",
               "target": "/var/lib/jenkins/workspace/"
             }
          ]
