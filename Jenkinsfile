@@ -49,7 +49,10 @@ stage('Build'){
    }
    stage('Docker image build')
    {
-       sh "docker build -t seconddocker/image:${BUILD_NUMBER} ."
+       
+      // sh "docker build -t seconddocker/image:${BUILD_NUMBER} ."
+       def customImage = docker.build("seconddocker/image:${BUILD_NUMBER}")
+       customImage.push()
    }
    
    stage('Deploy artifacts')
