@@ -10,8 +10,9 @@ node(label:'master') {
 
 stage('Build'){
    withSonarQubeEnv('SonarQube1') {
+   mvnHome = tool 'Maven'
    def var = '-Dsonar.host.url=http://104.211.213.175:9000 -Dsonar.login=07062dc8d19fea91d32cf9ca1d0dfdeb4633c747'
-       sh "'${mvnHome}/bin/mvn' clean install sonar:sonar ${var}"
+       sh "'${mvnHome}/bin/mvn' ${var} clean install sonar:sonar"
    } 
 }
    
