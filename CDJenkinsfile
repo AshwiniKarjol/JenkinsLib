@@ -7,7 +7,7 @@ rtDownload (
           "files": [
             {
               "pattern": "libs-snapshot-repo/23/",
-              "target": "/var/lib/jenkins/workspace/,
+              "target": "/var/lib/jenkins/workspace/"
             }
          ]
         }"""
