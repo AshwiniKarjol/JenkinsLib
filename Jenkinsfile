@@ -51,8 +51,13 @@ stage('Build'){
    {
        
       // sh "docker build -t seconddocker/image:${BUILD_NUMBER} ."
+      docker.withRegistry('https://registry.hub.docker.com', 'DockerAuth') {
        def customImage = docker.build("seconddocker/image:${BUILD_NUMBER}")
        customImage.push()
+       }
+       
+       
+       
    }
    
    stage('Deploy artifacts')
