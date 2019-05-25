@@ -1,3 +1,4 @@
+node(label:'master') {
 stage('Download Artifacts') {
 rtDownload (
     serverId: "Artifactory1",
@@ -11,5 +12,5 @@ rtDownload (
          ]
         }"""
 )
-
+}
 }
