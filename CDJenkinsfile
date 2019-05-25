@@ -1,4 +1,4 @@
-node(label:'master') {
+node(label:'slave_jenkins') {
 stage('Download Artifacts') {
 rtDownload (
     serverId: "Artifactory1",
