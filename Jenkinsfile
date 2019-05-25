@@ -1,5 +1,5 @@
 @Library('my_shared_library')_
-node(label:'slave_jenkins') {
+node(label:'master') {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
