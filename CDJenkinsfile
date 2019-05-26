@@ -1,3 +1,4 @@
+@Library('my_shared_library')_
 node(label:'slave_jenkins') {
 stage('Download Artifacts') {
 
