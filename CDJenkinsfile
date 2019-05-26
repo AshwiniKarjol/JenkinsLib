@@ -5,4 +5,11 @@ stage('Download Artifacts') {
 cdartifactorylib "Artifactory1","libs-snapshot-repo","/var/lib/jenkins/workspace/"
 
 }
+
+
+stage('SCP-ing war file to tomcat server')
+  {
+  sh "scp /var/lib/jenkins/workspace/${env.BUILD_NUMBER}/*.war root@52.172.9.80:/usr/local/tomcat/webapps"
+  
+  } 
 }
