@@ -4,6 +4,7 @@ node(label:'master') {
    stage('Initialization') { 
       // Get some code from a GitHub repository
       git 'https://github.com/AshwiniKarjol/HelloWorld.git'
+      git 'https://github.com/AshwiniKarjol/MVC.git'
      
    }
 
