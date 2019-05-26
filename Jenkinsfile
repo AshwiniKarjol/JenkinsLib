@@ -41,7 +41,7 @@ stage('Build'){
    //moving the artifacts to jfrog
    stage('Deploy artifacts')
    {
-    artifactorylib "Artifactory1","./target/*.jar","libs-snapshot-repo"
+    artifactorylib "Artifactory1","./target/*.war","libs-snapshot-repo"
    }
    
 }
