@@ -3,7 +3,9 @@ node(label:'master') {
    def mvnHome
    stage('Initialization') { 
       // Get some code from a GitHub repository
-      git 'https://github.com/AshwiniKarjol/MVC.git'
+     // git 'https://github.com/AshwiniKarjol/MVC.git'
+     git 'https://github.com/AshwiniKarjol/spring3-mvc-maven-xml-hello-world'
+     
      
    }
 
