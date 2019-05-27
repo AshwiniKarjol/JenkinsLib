@@ -3,7 +3,6 @@ node(label:'master') {
    def mvnHome
    stage('Initialization') { 
       // Get some code from a GitHub repository
-     // git 'https://github.com/AshwiniKarjol/HelloWorld.git'
       git 'https://github.com/AshwiniKarjol/MVC.git'
      
    }
