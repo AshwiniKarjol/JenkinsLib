@@ -16,15 +16,7 @@ stage('Build'){
    } 
 }
    
-   stage('Notify')
-   {
-   emailext (
-      subject: "Successful Build: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-      body: """<p>Build is successful: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-        <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>""",
-      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-    )
-   }
+ 
    //SOnar Quality gate 
    stage('Sonar Quality gate')
    {  
@@ -41,6 +33,16 @@ stage('Build'){
    stage('Deploy artifacts')
    {
     artifactorylib "Artifactory1","./target/*.war","libs-snapshot-repo"
+   }
+   
+     stage('Notify')
+   {
+   emailext (
+      subject: "Successful : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      body: """<p>BCI job is successful: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>""",
+      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+    )
    }
    
 }
